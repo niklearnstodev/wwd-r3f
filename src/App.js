@@ -1,11 +1,34 @@
-import React, { useRef } from "react";
-import { Canvas, useFrame, extend, useThree } from "react-three-fiber";
+import React, { useRef, Suspense } from "react";
+import {
+  Canvas,
+  useFrame,
+  extend,
+  useThree,
+  useLoader,
+} from "react-three-fiber";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import Box from "./components/Box";
 import "./App.css";
 import CubeDefs from "./seed/cubes";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 extend({ OrbitControls });
+
+function Loading() {
+  return (
+    <mesh visible position={[0, 0, 0]} rotation={[0, 0, 0]}>
+      <sphereGeometry attach="geometry" args={[1, 16, 16]} />
+      <meshStandardMaterial
+        attach="material"
+        color="white"
+        transparent
+        opacity={0.6}
+        roughness={1}
+        metalness={0}
+      />
+    </mesh>
+  );
+}
 
 export default function App() {
   const cubes = CubeDefs;
@@ -42,11 +65,14 @@ export default function App() {
         )}
       </div>
       <Canvas id="maincanvas">
-        <CameraControls />
-        <ambientLight intensity={0.5} />
+        {/* <CameraControls /> */}
+        {/* <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-        <pointLight position={[-10, -10, -10]} />
-        {tdCubes}
+        <pointLight position={[-10, -10, -10]} /> */}
+        <Suspense fallback={<Loading />}>
+          <NodeAndString />
+        </Suspense>
+        {/* {tdCubes} */}
       </Canvas>
     </div>
   );
@@ -75,3 +101,24 @@ const CameraControls = () => {
     />
   );
 };
+
+function NodeAndString() {
+  const group = useRef();
+  const { nodes } = useLoader(GLTFLoader, "./models/nodestring.gltf");
+  console.log(nodes);
+  useFrame(() => {
+    group.current.rotation.y += 0.004;
+  });
+  return (
+    <group ref={group}>
+      <mesh visible geometry={nodes.Default.geometry}>
+        <meshStandardMaterial
+          attach="material"
+          color="black"
+          roughness={0.3}
+          metalness={0.3}
+        />
+      </mesh>
+    </group>
+  );
+}
