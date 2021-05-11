@@ -50,9 +50,27 @@ export default function App() {
     );
   });
 
+  function ArWing() {
+    const group = useRef();
+    const { nodes } = useLoader(GLTFLoader, "models/5.gltf");
+    console.log(nodes);
+    return (
+      <group ref={group}>
+        <mesh visible geometry={nodes["5"].geometry}>
+          <meshStandardMaterial
+            attach="material"
+            color="white"
+            roughness={0.3}
+            metalness={0.3}
+          />
+        </mesh>
+      </group>
+    );
+  }
+
   return (
     <div>
-      <div className="info-container">
+      {/* <div className="info-container">
         {currentCube < 0 ? null : (
           <div className="selected-container">
             <div className="selected-container__header">
@@ -63,14 +81,14 @@ export default function App() {
             </div>
           </div>
         )}
-      </div>
+      </div> */}
       <Canvas id="maincanvas">
-        {/* <CameraControls /> */}
+        <CameraControls />
         {/* <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
         <pointLight position={[-10, -10, -10]} /> */}
         <Suspense fallback={<Loading />}>
-          <NodeAndString />
+          <ArWing />
         </Suspense>
         {/* {tdCubes} */}
       </Canvas>

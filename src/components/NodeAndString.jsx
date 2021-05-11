@@ -4,14 +4,14 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 export default function NodeAndString(props) {
   const group = useRef();
-  const { nodes } = useLoader(GLTFLoader, "../models/nodestring.gltf");
+  const { nodes } = useLoader(GLTFLoader, "/models/5.gltf");
   console.log(nodes);
   useFrame(() => {
     group.current.rotation.y += 0.004;
   });
   return (
     <group>
-      <mesh visible geometry={nodes.Default.geometry}>
+      <mesh visible geometry={nodes["5"].geometry}>
         <meshStandardMaterial
           attach="material"
           color="black"
