@@ -1,33 +1,13 @@
-import React, { useRef, Suspense } from "react";
-import {
-  Canvas,
-  useFrame,
-  extend,
-  useThree,
-  useLoader,
-} from "react-three-fiber";
+import React, { Suspense } from "react";
+import { Canvas, extend } from "react-three-fiber";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import "./App.css";
 import Geometries from "./seed/geometries";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import Geometry from "./components/Geometry";
+import Loading from "./components/Loading";
+import CameraControls from "./components/CameraControls";
 
 extend({ OrbitControls });
-
-function Loading() {
-  return (
-    <mesh visible position={[0, 0, 0]} rotation={[0, 0, 0]}>
-      <sphereGeometry attach="geometry" args={[1, 16, 16]} />
-      <meshStandardMaterial
-        attach="material"
-        color="white"
-        transparent
-        opacity={0.6}
-        roughness={1}
-        metalness={0}
-      />
-    </mesh>
-  );
-}
 
 export default function App() {
   const geometryDefinitions = Geometries;
@@ -54,30 +34,6 @@ export default function App() {
     );
   });
 
-  function Geometry(props) {
-    const group = useRef();
-    const { nodes } = useLoader(GLTFLoader, props.file);
-    return (
-      <group ref={group}>
-        <mesh
-          visible
-          geometry={nodes[props.name].geometry}
-          onClick={(e) => {
-            console.log(`Item ${props.itemNumber} selected!`);
-            props.onClick(props.itemNumber);
-          }}
-        >
-          <meshStandardMaterial
-            attach="material"
-            color={props.color}
-            roughness={0.3}
-            metalness={0.3}
-          />
-        </mesh>
-      </group>
-    );
-  }
-
   return (
     <div>
       <Canvas id="maincanvas">
@@ -90,27 +46,3 @@ export default function App() {
     </div>
   );
 }
-
-const CameraControls = () => {
-  // Get a reference to the Three.js Camera, and the canvas html element.
-  // We need these to setup the OrbitControls component.
-  // https://threejs.org/docs/#examples/en/controls/OrbitControls
-  const {
-    camera,
-    gl: { domElement },
-  } = useThree();
-  // Ref to the controls, so that we can update them on every frame using useFrame
-  const controls = useRef();
-  useFrame((state) => controls.current.update());
-  return (
-    <orbitControls
-      ref={controls}
-      args={[camera, domElement]}
-      enableZoom={true}
-      maxAzimuthAngle={100 * Math.PI}
-      maxPolarAngle={100 * Math.PI}
-      minAzimuthAngle={-100 * Math.PI}
-      minPolarAngle={-100 * Math.PI}
-    />
-  );
-};
