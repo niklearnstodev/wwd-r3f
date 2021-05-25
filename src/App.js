@@ -7,9 +7,8 @@ import {
   useLoader,
 } from "react-three-fiber";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import Box from "./components/Box";
 import "./App.css";
-import CubeDefs from "./seed/cubes";
+import Geometries from "./seed/geometries";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 extend({ OrbitControls });
@@ -31,35 +30,46 @@ function Loading() {
 }
 
 export default function App() {
-  const cubes = CubeDefs;
-  const [currentCube, setCurrentCube] = React.useState(-1);
+  const geometryDefinitions = Geometries;
+  const [currentGeomtry, setCurrentGeometry] = React.useState(-1);
 
   function handleClick(i) {
-    setCurrentCube(i === currentCube ? -1 : i);
+    setCurrentGeometry(i === currentGeomtry ? -1 : i);
   }
 
-  const tdCubes = cubes.map((cube, i) => {
+  const wrappedGeometries = geometryDefinitions.map((geometry, i) => {
     return (
-      <Box
-        key={i}
-        position={cube.position}
-        itemNumber={i}
-        onClick={(item) => handleClick(item)}
-        isActive={currentCube === i}
-      />
+      <Suspense key={i} fallback={<Loading />}>
+        <Geometry
+          key={i}
+          itemNumber={i}
+          position={geometry.position}
+          file={geometry.file}
+          name={geometry.name}
+          onClick={(item) => handleClick(item)}
+          isActive={currentGeomtry === i}
+          color={geometry.color}
+        />
+      </Suspense>
     );
   });
 
-  function ArWing() {
+  function Geometry(props) {
     const group = useRef();
-    const { nodes } = useLoader(GLTFLoader, "models/5.gltf");
-    console.log(nodes);
+    const { nodes } = useLoader(GLTFLoader, props.file);
     return (
       <group ref={group}>
-        <mesh visible geometry={nodes["5"].geometry}>
+        <mesh
+          visible
+          geometry={nodes[props.name].geometry}
+          onClick={(e) => {
+            console.log(`Item ${props.itemNumber} selected!`);
+            props.onClick(props.itemNumber);
+          }}
+        >
           <meshStandardMaterial
             attach="material"
-            color="white"
+            color={props.color}
             roughness={0.3}
             metalness={0.3}
           />
@@ -70,27 +80,12 @@ export default function App() {
 
   return (
     <div>
-      {/* <div className="info-container">
-        {currentCube < 0 ? null : (
-          <div className="selected-container">
-            <div className="selected-container__header">
-              {cubes[currentCube].title}
-            </div>
-            <div className="selected-container__body">
-              {cubes[currentCube].description}
-            </div>
-          </div>
-        )}
-      </div> */}
       <Canvas id="maincanvas">
         <CameraControls />
-        {/* <ambientLight intensity={0.5} />
+        <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-        <pointLight position={[-10, -10, -10]} /> */}
-        <Suspense fallback={<Loading />}>
-          <ArWing />
-        </Suspense>
-        {/* {tdCubes} */}
+        <pointLight position={[-10, -10, -10]} />
+        {wrappedGeometries}
       </Canvas>
     </div>
   );
@@ -111,7 +106,7 @@ const CameraControls = () => {
     <orbitControls
       ref={controls}
       args={[camera, domElement]}
-      enableZoom={false}
+      enableZoom={true}
       maxAzimuthAngle={100 * Math.PI}
       maxPolarAngle={100 * Math.PI}
       minAzimuthAngle={-100 * Math.PI}
@@ -119,24 +114,3 @@ const CameraControls = () => {
     />
   );
 };
-
-function NodeAndString() {
-  const group = useRef();
-  const { nodes } = useLoader(GLTFLoader, "./models/nodestring.gltf");
-  console.log(nodes);
-  useFrame(() => {
-    group.current.rotation.y += 0.004;
-  });
-  return (
-    <group ref={group}>
-      <mesh visible geometry={nodes.Default.geometry}>
-        <meshStandardMaterial
-          attach="material"
-          color="black"
-          roughness={0.3}
-          metalness={0.3}
-        />
-      </mesh>
-    </group>
-  );
-}
