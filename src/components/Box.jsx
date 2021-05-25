@@ -1,8 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 
 export default function Box(props) {
   const mesh = useRef();
-  const [state, setIsActive] = useState({ isActive: false });
 
   return (
     <mesh
