@@ -1,10 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 #maincanvas {
   position: absolute !important;
   top: 0px;
+  background-color: #fff3d4;
 }
 .info-container {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
+  position: absolute;
+  right: 100px;
+  top: 100px;
+  border: #f04c4c 3px solid;
+  padding: 3px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.info-container__heading {
+  font-weight: bold;
+  font-style: italic;
+}
+.info-container__link {
+  color: lightgray;
 }
 .selected-container {
   width: 250px;

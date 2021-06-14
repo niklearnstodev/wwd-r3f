@@ -3,9 +3,10 @@ import { Canvas, extend } from "react-three-fiber";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import "./App.css";
 import Geometries from "./seed/geometries";
-import Geometry from "./components/Geometry";
 import Loading from "./components/Loading";
 import CameraControls from "./components/CameraControls";
+import Sidebar from "./components/Sidebar";
+import Node from "./components/Node";
 
 extend({ OrbitControls });
 
@@ -20,7 +21,7 @@ export default function App() {
   const wrappedGeometries = geometryDefinitions.map((geometry, i) => {
     return (
       <Suspense key={i} fallback={<Loading />}>
-        <Geometry
+        <Node
           key={i}
           itemNumber={i}
           position={geometry.position}
@@ -29,6 +30,9 @@ export default function App() {
           onClick={(item) => handleClick(item)}
           isActive={currentGeomtry === i}
           color={geometry.color}
+          strings={geometry.strings}
+          baseColor={geometry.color_base}
+          clickedColor={geometry.color_clicked}
         />
       </Suspense>
     );
@@ -43,6 +47,14 @@ export default function App() {
         <pointLight position={[-10, -10, -10]} />
         {wrappedGeometries}
       </Canvas>
+      {currentGeomtry > -1 ? (
+        <Sidebar
+          selectedItem={currentGeomtry}
+          geometry={geometryDefinitions[currentGeomtry]}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
