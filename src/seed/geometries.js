@@ -1,7 +1,7 @@
 const Geometries = [
   {
     name: "AnonymousAnamankaNODE",
-    position: [0, 0, -1000],
+    position: [0, 0, 0],
     file: "models/AnonymousAnamonkaNODE.gltf",
     title: "Anonymous Anamanka",
     description: "This is an anonymous anamanka!",
@@ -17,7 +17,7 @@ const Geometries = [
   },
   {
     name: "ConjectureSpeculationNODE",
-    position: [0, 0, -1000],
+    position: [0, 0, 0],
     file: "models/ConjectureSpeculationNODE.gltf",
     title: "Conjecture Sepculation",
     description: "This is a cat!",
@@ -33,7 +33,7 @@ const Geometries = [
   },
   {
     name: "MenstrationNODE",
-    position: [0, 0, -1000],
+    position: [0, 0, 0],
     file: "models/MenstrationNODE.gltf",
     title: "Menstration",
     description: "This is a cat!",
@@ -49,7 +49,7 @@ const Geometries = [
   },
   {
     name: "MeralEkinciogluNODE",
-    position: [0, 0, -1000],
+    position: [0, 0, 0],
     file: "models/MeralEkinciogluNODE.gltf",
     title: "Meral Ekincioglu",
     description: "This is a cat!",
@@ -65,7 +65,7 @@ const Geometries = [
   },
   {
     name: "StitchNODE",
-    position: [0, 0, -1000],
+    position: [0, 0, 0],
     file: "models/StitchNODE.gltf",
     title: "Stitch",
     description: "This is a cat!",
@@ -97,7 +97,7 @@ const Geometries = [
   },
   {
     name: "UmbrellaMomentsNODE",
-    position: [0, 0, -1000],
+    position: [0, 0, 0],
     file: "models/UmbrellaMomentsNODE.gltf",
     title: "Umbrella Moments",
     description: "This is a cat!",
@@ -113,7 +113,7 @@ const Geometries = [
   },
   {
     name: "VirginiaNODE",
-    position: [0, 0, -1000],
+    position: [0, 0, 0],
     file: "models/VirginiaNODE.gltf",
     title: "Virginia",
     description: "This is a cat!",
@@ -129,7 +129,7 @@ const Geometries = [
   },
   {
     name: "waiNODE",
-    position: [0, 0, -1000],
+    position: [0, 0, 0],
     file: "models/waiNODE.gltf",
     title: "wai",
     description: "This is a cat!",
