@@ -47,14 +47,16 @@ export default function App() {
         <pointLight position={[-10, -10, -10]} />
         {wrappedGeometries}
       </Canvas>
-      {currentGeomtry > -1 ? (
-        <Sidebar
-          selectedItem={currentGeomtry}
-          geometry={geometryDefinitions[currentGeomtry]}
-        />
-      ) : (
-        ""
-      )}
+      <div className="sidebar-container">
+        {currentGeomtry > -1 ? (
+          <Sidebar
+            selectedItem={currentGeomtry}
+            geometry={geometryDefinitions[currentGeomtry]}
+          />
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 }
