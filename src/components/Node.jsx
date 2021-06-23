@@ -6,7 +6,11 @@ import Strings from "./Strings";
 export default function Node(props) {
   const group = useRef();
   const { nodes } = useLoader(GLTFLoader, props.file);
-  const activeColor = props.isActive ? props.clickedColor : props.baseColor;
+  const activeColor = props.isActive
+    ? props.clickedColor
+    : props.anyActive
+    ? props.greyColor
+    : props.baseColor;
   const strings = props.strings.map((stringsSet) => {
     return (
       <Strings

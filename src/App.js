@@ -3,7 +3,6 @@ import { Canvas, extend } from "react-three-fiber";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import "./App.css";
 import Geometries from "./seed/geometries";
-import Loading from "./components/Loading";
 import CameraControls from "./components/CameraControls";
 import Sidebar from "./components/Sidebar";
 import Node from "./components/Node";
@@ -20,7 +19,7 @@ export default function App() {
 
   const wrappedGeometries = geometryDefinitions.map((geometry, i) => {
     return (
-      <Suspense key={i} fallback={<Loading />}>
+      <Suspense key={i} fallback={null}>
         <Node
           key={i}
           itemNumber={i}
@@ -29,10 +28,12 @@ export default function App() {
           name={geometry.name}
           onClick={(item) => handleClick(item)}
           isActive={currentGeomtry === i}
+          anyActive={currentGeomtry > -1}
           color={geometry.color}
           strings={geometry.strings}
           baseColor={geometry.color_base}
           clickedColor={geometry.color_clicked}
+          greyColor={geometry.color_grey}
         />
       </Suspense>
     );

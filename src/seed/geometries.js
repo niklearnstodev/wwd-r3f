@@ -7,6 +7,7 @@ const Geometries = [
     description: "This is an anonymous anamanka!",
     color_base: "#D8ACB7",
     color_clicked: "#D78499",
+    color_grey: "#F7F3F3",
     project_link: "https://en.wikipedia.org/wiki/Architecture",
     strings: [
       {
@@ -19,11 +20,12 @@ const Geometries = [
     name: "ConjectureSpeculationNODE",
     position: [0, 0, 0],
     file: "models/ConjectureSpeculationNODE.gltf",
-    title: "Conjecture Sepculation",
+    title: "Conjecture Speculation",
     image: "images/Conjecture.jpg",
     description: "This is a cat!",
     color_base: "#C29375",
     color_clicked: "#BE6B37",
+    color_grey: "#F7F3F3",
     project_link: "https://en.wikipedia.org/wiki/Architecture",
     strings: [
       {
@@ -40,6 +42,7 @@ const Geometries = [
     description: "This is a cat!",
     color_base: "#EFB9A4",
     color_clicked: "#FF9970",
+    color_grey: "#F7F3F3",
     project_link: "https://en.wikipedia.org/wiki/Architecture",
     strings: [
       {
@@ -56,6 +59,7 @@ const Geometries = [
     description: "This is a cat!",
     color_base: "#ED9B96",
     color_clicked: "#FF645C",
+    color_grey: "#F7F3F3",
     project_link: "https://en.wikipedia.org/wiki/Architecture",
     strings: [
       {
@@ -72,6 +76,7 @@ const Geometries = [
     description: "This is a cat!",
     color_base: "#E9BAB9",
     color_clicked: "#F09593",
+    color_grey: "#F7F3F3",
     project_link: "https://en.wikipedia.org/wiki/Architecture",
     strings: [
       {
@@ -84,11 +89,12 @@ const Geometries = [
     name: "TodaysDilemaNODE",
     position: [0, 0, -1000],
     file: "models/TodaysDilemaNODE.gltf",
-    title: "Today's Dilema",
+    title: "Today's Dilemma",
     image: "images/TodaysDilemma.jpg",
     description: "This is a cat!",
     color_base: "#D8ABBE",
     color_clicked: "#D981A5",
+    color_grey: "#F7F3F3",
     project_link: "https://en.wikipedia.org/wiki/Architecture",
     strings: [
       {
@@ -106,6 +112,7 @@ const Geometries = [
     description: "This is a cat!",
     color_base: "#DDABA6",
     color_clicked: "#E28279",
+    color_grey: "#F7F3F3",
     project_link: "https://en.wikipedia.org/wiki/Architecture",
     strings: [
       {
@@ -122,6 +129,7 @@ const Geometries = [
     description: "This is a cat!",
     color_base: "#E9AABD",
     color_clicked: "#F47B9F",
+    color_grey: "#F7F3F3",
     project_link: "https://en.wikipedia.org/wiki/Architecture",
     strings: [
       {
@@ -138,6 +146,7 @@ const Geometries = [
     description: "This is a cat!",
     color_base: "#E1B097",
     color_clicked: "#EC8E5E",
+    color_grey: "#F7F3F3",
     project_link: "https://en.wikipedia.org/wiki/Architecture",
     strings: [
       {
