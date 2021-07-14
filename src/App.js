@@ -12,8 +12,12 @@ extend({ OrbitControls });
 export default function App() {
   const geometryDefinitions = Geometries;
   const [currentGeomtry, setCurrentGeometry] = React.useState(-1);
+  const [beenClicked, setBeenClicked] = React.useState([]);
 
   function handleClick(i) {
+    if (beenClicked.indexOf(i) === -1) {
+      setBeenClicked([...beenClicked, i]);
+    }
     setCurrentGeometry(i === currentGeomtry ? -1 : i);
   }
 
@@ -34,6 +38,7 @@ export default function App() {
           baseColor={geometry.color_base}
           clickedColor={geometry.color_clicked}
           greyColor={geometry.color_grey}
+          nodeHasBeenClicked={beenClicked.includes(i)}
         />
       </Suspense>
     );

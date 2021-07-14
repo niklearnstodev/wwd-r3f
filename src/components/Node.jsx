@@ -8,6 +8,8 @@ export default function Node(props) {
   const { nodes } = useLoader(GLTFLoader, props.file);
   const activeColor = props.isActive
     ? props.clickedColor
+    : props.nodeHasBeenClicked
+    ? props.clickedColor
     : props.anyActive
     ? props.greyColor
     : props.baseColor;

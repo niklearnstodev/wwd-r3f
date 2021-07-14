@@ -13,7 +13,11 @@ export default function Sidebar(props) {
         {info.description}
       </div>
       <div className="info-container__link info-container__item">
-        <a href={info.project_link} aria-label="link to exhibit">
+        <a
+          href={info.project_link}
+          aria-label="link to exhibit"
+          target="_blank"
+        >
           Visit the exhibit
         </a>
       </div>
