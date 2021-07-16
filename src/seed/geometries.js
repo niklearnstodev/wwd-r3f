@@ -12,6 +12,7 @@ const Geometries = [
     color_clicked: "#D78499",
     color_grey: "#F7F3F3",
     project_link: "https://en.wikipedia.org/wiki/Architecture",
+    artist_link: "https://www.zaha-hadid.com/",
     strings: [
       {
         name: "AnonymousAnamankaSTRINGS",
@@ -32,6 +33,7 @@ const Geometries = [
     color_clicked: "#BE6B37",
     color_grey: "#F7F3F3",
     project_link: "https://en.wikipedia.org/wiki/Architecture",
+    artist_link: "https://www.zaha-hadid.com/",
     strings: [
       {
         name: "ConjectureSpeculationSTRINGS",
@@ -52,6 +54,7 @@ const Geometries = [
     color_clicked: "#FF9970",
     color_grey: "#F7F3F3",
     project_link: "https://en.wikipedia.org/wiki/Architecture",
+    artist_link: "https://www.zaha-hadid.com/",
     strings: [
       {
         name: "MenstrationSTRINGS",
@@ -72,6 +75,7 @@ const Geometries = [
     color_clicked: "#FF645C",
     color_grey: "#F7F3F3",
     project_link: "https://en.wikipedia.org/wiki/Architecture",
+    artist_link: "https://www.zaha-hadid.com/",
     strings: [
       {
         name: "MeralEkinciogluSTRINGS",
@@ -89,6 +93,7 @@ const Geometries = [
   //   color_clicked: "#F09593",
   //   color_grey: "#F7F3F3",
   //   project_link: "https://en.wikipedia.org/wiki/Architecture",
+  // artist_link: "https://www.zaha-hadid.com/",
   //   strings: [
   //     {
   //       name: "SitchSTRINGS",
@@ -109,6 +114,7 @@ const Geometries = [
     color_clicked: "#D981A5",
     color_grey: "#F7F3F3",
     project_link: "https://en.wikipedia.org/wiki/Architecture",
+    artist_link: "https://www.zaha-hadid.com/",
     strings: [
       {
         name: "TodaysDilemaSTRINGS",
@@ -129,6 +135,7 @@ const Geometries = [
     color_clicked: "#E28279",
     color_grey: "#F7F3F3",
     project_link: "https://en.wikipedia.org/wiki/Architecture",
+    artist_link: "https://www.zaha-hadid.com/",
     strings: [
       {
         name: "UmbrellaMomentsSTRINGS",
@@ -149,6 +156,7 @@ const Geometries = [
     color_clicked: "#F47B9F",
     color_grey: "#F7F3F3",
     project_link: "https://en.wikipedia.org/wiki/Architecture",
+    artist_link: "https://www.zaha-hadid.com/",
     strings: [
       {
         name: "VirginiaSTRINGS",
@@ -166,6 +174,7 @@ const Geometries = [
   //   color_clicked: "#EC8E5E",
   //   color_grey: "#F7F3F3",
   //   project_link: "https://en.wikipedia.org/wiki/Architecture",
+  // artist_link: "https://www.zaha-hadid.com/",
   //   strings: [
   //     {
   //       name: "waiSTRINGS",

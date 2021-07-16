@@ -26,6 +26,9 @@
   font-weight: bold;
   font-style: italic;
 }
+.info-container__subheading {
+  font-style: italic;
+}
 .info-container__description {
 }
 .info-container__link {
