@@ -83,24 +83,27 @@ const Geometries = [
       },
     ],
   },
-  // {
-  //   name: "StitchNODE",
-  //   position: [0, 0, 0],
-  //   file: "models/StitchNODE.gltf",
-  //   title: "Stitch",
-  //   description: "This is a cat!",
-  //   color_base: "#E9BAB9",
-  //   color_clicked: "#F09593",
-  //   color_grey: "#F7F3F3",
-  //   project_link: "https://en.wikipedia.org/wiki/Architecture",
-  // artist_link: "https://www.zaha-hadid.com/",
-  //   strings: [
-  //     {
-  //       name: "SitchSTRINGS",
-  //       file: "models/SitchSTRINGS.gltf",
-  //     },
-  //   ],
-  // },
+  {
+    name: "StitchNODE",
+    position: [0, 0, 0],
+    file: "models/StitchNODE.gltf",
+    artist: "Date TBA",
+    title: "Artist Talk with Shivangi Gadia",
+    image: "images/CsYellowNoBorder.png",
+    description:
+      "Visit the Red Carpet: Natural Cycle vs. Career gallery, then join us for a participatory discussion of how our experience of work relates to the rhythms of our bodies.",
+    color_base: "#E9BAB9",
+    color_clicked: "#F09593",
+    color_grey: "#F7F3F3",
+    project_link: "https://en.wikipedia.org/wiki/Architecture",
+    artist_link: "https://www.zaha-hadid.com/",
+    strings: [
+      {
+        name: "SitchSTRINGS",
+        file: "models/SitchSTRINGS.gltf",
+      },
+    ],
+  },
   {
     name: "TodaysDilemaNODE",
     position: [0, 0, -1000],
@@ -164,24 +167,27 @@ const Geometries = [
       },
     ],
   },
-  // {
-  //   name: "waiNODE",
-  //   position: [0, 0, 0],
-  //   file: "models/waiNODE.gltf",
-  //   title: "wai",
-  //   description: "This is a cat!",
-  //   color_base: "#E1B097",
-  //   color_clicked: "#EC8E5E",
-  //   color_grey: "#F7F3F3",
-  //   project_link: "https://en.wikipedia.org/wiki/Architecture",
-  // artist_link: "https://www.zaha-hadid.com/",
-  //   strings: [
-  //     {
-  //       name: "waiSTRINGS",
-  //       file: "models/waiSTRINGS.gltf",
-  //     },
-  //   ],
-  // },
+  {
+    name: "waiNODE",
+    position: [0, 0, 0],
+    file: "models/waiNODE.gltf",
+    title: "Artist Talk with Sonia Guha",
+    artist: "Date TBA",
+    image: "images/CsYellowNoBorder.png",
+    description:
+      "Visit the Umbrella Moments gallery, then join us for a panel on those moments, benign or not, when women are treated differently in the workplace.",
+    color_base: "#E1B097",
+    color_clicked: "#EC8E5E",
+    color_grey: "#F7F3F3",
+    project_link: "https://en.wikipedia.org/wiki/Architecture",
+    artist_link: "https://www.zaha-hadid.com/",
+    strings: [
+      {
+        name: "waiSTRINGS",
+        file: "models/waiSTRINGS.gltf",
+      },
+    ],
+  },
 ];
 
 export default Geometries;
