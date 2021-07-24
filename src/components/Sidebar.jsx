@@ -24,11 +24,17 @@ export default function Sidebar(props) {
         {info.description}
       </div>
       <div className="info-container__image info-container__item">
-        <img
-          className="info-container__img"
-          src={image}
-          alt={`Placeholder - ${info.title}`}
-        />
+        <a
+          href={info.project_link}
+          aria-label="link to exhibit"
+          target="_blank"
+        >
+          <img
+            className="info-container__img"
+            src={image}
+            alt={`Placeholder - ${info.title}`}
+          />
+        </a>
       </div>
     </div>
   );
